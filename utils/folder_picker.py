@@ -1,23 +1,12 @@
-from tkinter import Tk
-from tkinter import filedialog
+from tkinter import Tk, filedialog
 
 
-def select_folder(title="Select Folder"):
-    """
-    Opens a Windows folder selection dialog.
-
-    Returns
-    -------
-    str
-        Selected folder path.
-        Returns an empty string if cancelled.
-    """
-
+def select_folder():
     root = Tk()
-    root.withdraw()
+    root.withdraw()           # Hide the small Tkinter window
     root.attributes("-topmost", True)
 
-    folder = filedialog.askdirectory(title=title)
+    folder = filedialog.askdirectory()
 
     root.destroy()
 
